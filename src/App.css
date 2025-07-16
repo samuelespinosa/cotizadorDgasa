@@ -1,0 +1,94 @@
+.cotization-container {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* Make the table column larger */
+  width: 100%;
+  gap: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+}
+
+.form input,
+.form select {
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #000; /* Black border for sharp edges */
+  border-radius: 0; /* Remove border radius for sharp edges */
+  background-color: #fff; /* White background */
+  color: #000; /* Black text */
+}
+
+.form input:focus,
+.form select:focus {
+  border-color: #000; /* Black border on focus */
+  outline: none;
+}
+
+.btn-submit, .btn-download-pdf {
+  width: 100%;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 0; /* Remove border radius for sharp edges */
+}
+
+
+.btn-submit:hover, .btn-download-pdf:hover {
+  background-color: #333; /* Darker black on hover */
+}
+.btn-submit:disabled, .btn-download-pdf:disabled {
+  background-color: #222; /* Light gray for disabled state */
+  cursor: not-allowed;
+  color: #888; /* Darker gray text */
+}
+
+.error {
+  color: red;
+}
+
+.table-results {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+  background: #fff; /* White background */
+  box-shadow: none; /* Remove shadow for simplicity */
+}
+
+.table-results th,
+.table-results td {
+  border: 1px solid #000; /* Black border for sharp edges */
+  padding: 10px 12px;
+  text-align: center;
+}
+
+.table-results th {
+  background-color: #000; /* Black background */
+  color: #fff; /* White text */
+  font-weight: bold;
+}
+
+.table-results tr:nth-child(even) {
+  background-color: #f0f0f0; /* Light gray for even rows */
+}
+
+.table-results tr:hover {
+  background-color: #e0e0e0; /* Slightly darker gray on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .cotization-container {
+    grid-template-columns: 1fr; /* Stack form and table on smaller screens */
+  }
+
+  .form, .table-results {
+    width: 100%; /* Ensure full width on smaller screens */
+  }
+}

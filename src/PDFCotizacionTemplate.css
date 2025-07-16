@@ -1,0 +1,102 @@
+.pdf-cotizacion-root {
+  width: 595px;
+  font-family: 'Poppins', 'Roboto', Arial, sans-serif;
+  background: #fff;
+  border-radius: 8px;
+  color: #222;
+  box-shadow: 0 2px 8px rgba(44,62,80,0.08);
+  font-size: 12px;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.pdf_header {
+  padding: 0;
+  position:relative;
+  top:0;
+  left:0;
+  margin:0;
+  padding:0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+.pdf-logo {
+  height: 30px; /* Set a fixed height */
+  width: auto; /* Maintain aspect ratio */
+  margin-right: 10px; /* Add some space between the logo and text */
+}
+
+.pdf-contact-info{
+  font-size: 10px;
+}
+
+.pdf-cotizacion-table {
+  width: 100%;
+  table-layout:auto;
+  background: #fafafa;
+   border-collapse: collapse;
+  border-radius: 8px;
+  overflow-x: auto;
+  box-shadow: 0 1px 4px rgba(44,62,80,0.04);
+}
+
+.pdf-cotizacion-table th, .pdf-cotizacion-table td {
+  padding: 4px 6px;
+  text-transform: capitalize;
+  border-collapse: collapse;
+  font-size: 10px;
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.pdf-cotizacion-table th {
+  font-size: 11px;
+  background: #222;
+  color: #fff;
+  font-weight: 600;
+}
+
+.pdf-cotizacion-table td {
+  background: #fff;
+}
+
+.pdf-cotizacion-total-row td {
+  padding: 5px 6px;
+  background: linear-gradient(90deg, #2e7d32 80%, #43a047 100%);
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 0 0 8px 8px;
+}
+.pdf-cotizacion-total-row td:first-child {
+  text-align: right;
+}
+.pdf-cotizacion-total-row td:last-child {
+  text-align: center;
+}
+
+.pdf-cotizacion-footer {
+  margin-top: 24px;
+  text-align: center;
+  color: #555;
+  font-size: 10px;
+}
+
+.pdf-cotizacion-footer a {
+  color: #2e7d32;
+  text-decoration: underline;
+}
+
+.pdf-download-pdf {
+  display: inline-block;
+  margin-top: 16px;
+  padding: 8px 16px;
+  background-color: #2e7d32;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
