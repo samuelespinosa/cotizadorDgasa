@@ -8,6 +8,7 @@
   font-size: 12px;
   box-sizing: border-box;
   padding: 20px;
+  max-height: 100%;
 }
 
 .pdf_header {
@@ -46,20 +47,26 @@
   padding: 4px 6px;
   text-transform: capitalize;
   border-collapse: collapse;
-  font-size: 10px;
+  font-size: 7px;
   border: 1px solid #e0e0e0;
   text-align: center;
 }
 
 .pdf-cotizacion-table th {
-  font-size: 11px;
+  font-size: 7px;
   background: #222;
   color: #fff;
   font-weight: 600;
 }
+.pdf-cotizacion-table th:first-child {
+  text-align: left;
+}
 
 .pdf-cotizacion-table td {
   background: #fff;
+}
+.pdf-cotizacion-table tr td:first-child {
+  text-align: left;
 }
 
 .pdf-cotizacion-total-row td {
@@ -99,4 +106,47 @@
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
+}
+
+
+/* New styles for the updated PDFCotizacionTemplate component */
+
+/* Style for the date in the contact info section */
+.pdf-contact-info .date {
+  font-size: 10px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Style for the client data list */
+.pdf-contact-info ul {
+  list-style-type: none;    
+  padding: 0;
+  margin: 0 0 8px 0;
+}
+
+.pdf-contact-info ul li {
+  font-size: 10px;
+  color: #333;
+  margin-bottom: 4px;
+}
+
+/* Style for the footer disclaimer list */
+.pdf-cotizacion-footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pdf-cotizacion-footer ul li {
+  font-size: 10px;
+  color: #555;
+  margin-bottom: 4px;
+}
+
+/* Style for the footer image */
+.pdf_foo .pdf-footer {
+  width: 100%;
+  height: auto;
+  margin-top: 16px;
 }

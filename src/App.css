@@ -7,28 +7,28 @@
   box-sizing: border-box;
 }
 
-.form {
+.form_ctz {
   display: flex;
   flex-direction: column;
   font-family: Arial, sans-serif;
 }
-
-.form input,
-.form select {
+.form_ctz .item_ctz{ display: flex; flex-direction: column; margin-bottom: 10px;}
+.form_ctz label{display: block; margin-bottom: 0px;}
+.form_ctz input,
+.form_ctz select {
   padding: 10px;
-  margin: 10px 0;
   border: 1px solid #000; /* Black border for sharp edges */
   border-radius: 0; /* Remove border radius for sharp edges */
   background-color: #fff; /* White background */
   color: #000; /* Black text */
 }
 
-.form input:focus,
-.form select:focus {
+.form_ctz input:focus,
+.form_ctz select:focus {
   border-color: #000; /* Black border on focus */
   outline: none;
 }
-
+.form_ctz input::placeholder { color: #000!IMPORTANT;}
 .btn-submit, .btn-download-pdf {
   width: 100%;
   background-color: #000; /* Black background */
@@ -67,7 +67,9 @@
   padding: 10px 12px;
   text-align: center;
 }
-
+.table-results th:first-child{
+  text-align: left;
+}
 .table-results th {
   background-color: #000; /* Black background */
   color: #fff; /* White text */
@@ -82,6 +84,9 @@
   background-color: #e0e0e0; /* Slightly darker gray on hover */
 }
 
+.table-results tr td:first-child {
+  text-align: left; /* Align first column to the left */
+}
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
   .cotization-container {

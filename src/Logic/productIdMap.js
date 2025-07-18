@@ -38,7 +38,7 @@ export const PRODUCT_ID_MAP = {
     "CAL 14": 1102
   },
   "estantillos": {
-    "default": 1131
+    "default": -1
   },
   "AisladorEsquinilla": {
     "default": 1108
@@ -46,8 +46,8 @@ export const PRODUCT_ID_MAP = {
   "aisladorDePaso": {
     "default": 1107
   },
-  "cantidadTensores": {
-    "default": 1120
+  "llaveTensora": {
+    "default": 1148
   },
   "cableAislador": {
     "default": 1125
@@ -61,12 +61,20 @@ export const PRODUCT_ID_MAP = {
     "default": 1123
   },
   "numeroKitFalsos": {
-    "default": 1144
+    "default": 1146
   },
   "voltimetro": {
     "default": 1139
   },
   "cuchilla": {
     "default": 1124
+  },
+  "tensor": {
+    "PEQUEÑO": 1119,
+    "GRANDE": 1120,
+    "AISLADOR": 1121,
+  },
+  "pararrayosGenerico": {
+    "default": 1129
   },
 };

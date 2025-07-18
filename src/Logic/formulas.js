@@ -28,6 +28,7 @@ export const calculateQuantities = (data) => {
     alambrePorHilo: hilos,
     calibreAlambre: data.calibreAlambre,
     totalAlambre,
+    tipoTensor: data.tipoTensor,
   };
 };
 

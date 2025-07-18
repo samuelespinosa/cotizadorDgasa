@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import ProductResults from "./components/ProductResults";
 import FormCotizacion from "./components/Form";
-import TableMock from "./components/TableMock"; // Import the new component
+import Steps from "./components/Steps"; // Import the new component
 import { getProductMap } from "./Logic/productMap";
 import './App.css';
+import { useDataContext } from "./dataContext";
 
 export default function App() {
   const [cotizacion, setCotizacion] = useState(null);
   const [prices, setPrices] = useState({});
   const [loading, setLoading] = useState(false);
+  const data = useDataContext();
+  console.log("Data from context:", data);
 
   useEffect(() => {
     if (!cotizacion) return;
@@ -27,7 +30,7 @@ export default function App() {
     }
 
     setLoading(true);
-    fetch(`https://clientes.atmagenciadigital.com/dgasa/wp-json/custom/v1/products?ids=${missingIds.join(',')}`)
+    fetch(`${data.siteUrl}/wp-json/custom/v1/products?ids=${missingIds.join(',')}`)
       .then((res) => res.json())
       .then((data) => {
         const newPrices = { ...cachedPrices };
@@ -45,21 +48,20 @@ export default function App() {
   }, [cotizacion]);
 
   const productMap = cotizacion ? getProductMap(cotizacion.cantidades) : [];
-
   return (
     <div className="cotization-container">
       <FormCotizacion onCotizar={setCotizacion} />
       {cotizacion ? (
         loading ? (
-          <div>Cargando precios...</div>
+          <div style={{ textAlign: "center", display:"flex", placeItems:"center", height:"100vh", placeContent:"center"}}>Cargando precios...</div>
         ) : (
           <ProductResults productMap={productMap.map(prod => ({
             ...prod,
             price: prices[prod.id] || 0
-          }))} />
+          }))} tipoCerca={cotizacion.formData.tipoDeCerca} />
         )
       ) : (
-        <TableMock /> // Render the TableMock component when no cotizacion
+        <Steps /> // Render the TableMock component when no cotizacion
       )}
     </div>
   );

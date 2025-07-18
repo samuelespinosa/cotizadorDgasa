@@ -2,13 +2,13 @@ import React, { useRef, useState } from "react";
 import jsPDF from "jspdf";
 import PDFCotizacionTemplate from "./PDFCotizacionTemplate";
 
-export default function ProductResults({ productMap }) {
+export default function ProductResults({ productMap, tipoCerca }) {
   const pdfRef = useRef();
   const [loading, setLoading] = useState(false); // Loading state
 
   let total = 0;
   productMap.forEach((prod) => {
-    total += (Number(prod.price) || 0) * prod.qty;
+    total += Math.ceil((Number(prod.price) || 0) * prod.qty );
   });
 
   const handleDownloadPDF = () => {
@@ -34,15 +34,14 @@ export default function ProductResults({ productMap }) {
   return (
     <div>
       <div style={{ display: "none" }}>
-        <PDFCotizacionTemplate ref={pdfRef} productMap={productMap} total={total} />
+        <PDFCotizacionTemplate ref={pdfRef} productMap={productMap} total={total} tipoCerca={tipoCerca} />
       </div>
       {/* Visible table as before */}
       
       <table className="table-results">
         <thead>
-          <tr>
-            <th>PRODUCTO</th>
-            <th>TIPO</th>
+          <tr>          
+            <th>DESCRIPCIÓN: CERCA ELECTRICA {tipoCerca}</th>
             <th>CANTIDAD</th>
             <th>UNIDAD</th>
             <th>PRECIO UNITARIO</th>
@@ -52,11 +51,10 @@ export default function ProductResults({ productMap }) {
         <tbody>
           {productMap.map((prod, idx) => {
             const unitPrice = Number(prod.price) || 0;
-            const totalPrice = prod.qty * unitPrice;
+            const totalPrice = Math.ceil(prod.qty * unitPrice)  // Round to two decimal places
             return (
               <tr key={prod.key}>
-                <td>{prod.label}</td>
-                <td>{prod.type}</td>
+                <td>{prod.label + " " + prod.type}</td>
                 <td>{prod.qty}</td>
                 <td>{prod.unit}</td>
                 <td>${unitPrice}</td>
@@ -65,7 +63,7 @@ export default function ProductResults({ productMap }) {
             );
           })}
           <tr>
-            <td colSpan={5} style={{ textAlign: "right", fontWeight: "bold" }}>TOTAL</td>
+            <td colSpan={4} style={{fontWeight: "bold"}}>TOTAL</td>
             <td style={{ fontWeight: "bold" }}>${total}</td>
           </tr>
         </tbody>
