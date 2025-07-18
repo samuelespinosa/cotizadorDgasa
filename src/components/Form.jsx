@@ -67,7 +67,7 @@ export default function FormCotizacion({ onCotizar }) {
       
       <div className="item_ctz">
         <label>6. Número de hilos de la cerca</label>
-        <input type="number" id="numHilos" {...register("numHilos", { required: "Ingrese el número de hilos", min: { value: 1, message: "Debe haber al menos 1 hilo" } , max: { value: 5, message: "El número máximo de hilos es 5" } })} placeholder="Seleccione el número de hilos de la cerca" />
+        <input type="number" id="numHilos" {...register("numHilos", { required: "Ingrese el número de hilos", min: { value: 1, message: "Debe haber al menos 1 hilo" } , max: { value: 6, message: "El número máximo de hilos es 6" } })} placeholder="Seleccione el número de hilos de la cerca" />
         {errors.numHilos && <span className="error">{errors.numHilos.message}</span>}
       </div>
       
