@@ -44,6 +44,8 @@
 }
 
 .pdf-cotizacion-table th, .pdf-cotizacion-table td {
+  background:#fff;
+  letter-spacing: 1px;
   padding: 4px 6px;
   text-transform: capitalize;
   border-collapse: collapse;

@@ -55,7 +55,7 @@ export default function ProductResults({ productMap, tipoCerca }) {
             return (
               <tr key={prod.key}>
                 <td>{prod.label + " " + prod.type}</td>
-                <td>{prod.qty}</td>
+                <td>{Math.round(prod.qty*100)/100}</td>
                 <td>{prod.unit}</td>
                 <td>${unitPrice}</td>
                 <td>${totalPrice}</td>
