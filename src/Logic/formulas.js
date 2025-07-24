@@ -29,6 +29,7 @@ export const calculateQuantities = (data) => {
     calibreAlambre: data.calibreAlambre,
     totalAlambre,
     tipoTensor: data.tipoTensor,
+    tipoAislador:data.tipoAislador
   };
 };
 

@@ -61,12 +61,12 @@ export function getProductMap(quantities) {
       qty: Math.ceil(quantities.cantidadBarras),
     },
     {
-      key: "aisladorDePaso",
-      label: "AISLADOR DE PASO",
+      key: "aislador",
+      label: "AISLADOR DE"+ ` ${quantities.tipoAislador}`,
       type: "",
-      id: PRODUCT_ID_MAP.aisladorDePaso.default,
+      id: PRODUCT_ID_MAP.aislador[quantities.tipoAislador] ?? null,
       unit: "PAQUETE",
-      qty: Math.ceil(quantities.aisladorDePaso),
+      qty: quantities.tipoAislador ==='PASO'? Math.ceil(quantities.aisladorDePaso): Math.ceil(quantities.aisladorPuntilla),
     },
     {
       key: "AisladorEsquinilla",

@@ -98,7 +98,6 @@ export default function FormCotizacion({ onCotizar }) {
           <option value="" disabled>Seleccione el tipo de tensor</option>
           <option value="PEQUEÑO">Tensor Pequeño</option>
           <option value="GRANDE">Tensor Grande</option>
-          <option value="AISLADOR">Tensor Con Aislador</option>
         </select>
         {errors.tipoTensor && <span className="error">{errors.tipoTensor.message}</span>}
       </div>
