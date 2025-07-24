@@ -5,16 +5,13 @@ const Steps = () => {
     <div className="step_cotizacion">
       <h3>TU CERCA ELÉCTRICA EN SEGUNDOS</h3>
       <p>
-        <strong>Llamado a la acción:</strong> En el siguiente formulario, usted
-        podrá obtener el costo aproximado de una cerca eléctrica ganadera
-        adaptada a su necesidad
+        En el siguiente formulario, usted podrá obtener el costo aproximado de una cerca eléctrica ganadera adaptada a su necesidad.
       </p>
       <h4>Pasos a seguir:</h4>
       <ol>
         <li>Ingresa los datos básicos según tu terreno y requerimientos.</li>
         <li>
-          Recibe una estimación automática. El sistema calculará los materiales
-          recomendados para tu instalación.
+          Recibe una estimación automática. El sistema calculará los materiales recomendados para tu instalación.
         </li>
         <li>Explora los productos sugeridos y agrega al carrito.</li>
         <li>

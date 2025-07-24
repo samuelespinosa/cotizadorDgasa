@@ -8,7 +8,7 @@
   font-size: 12px;
   box-sizing: border-box;
   padding: 20px;
-  max-height: 100%;
+  
 }
 
 .pdf_header {
@@ -44,6 +44,8 @@
 }
 
 .pdf-cotizacion-table th, .pdf-cotizacion-table td {
+  background:#fff;
+  letter-spacing: 1px;
   padding: 4px 6px;
   text-transform: capitalize;
   border-collapse: collapse;

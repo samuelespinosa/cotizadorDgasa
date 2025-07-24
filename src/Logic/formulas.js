@@ -19,7 +19,7 @@ export const calculateQuantities = (data) => {
     aisladorDePaso: calculateAisladorDePaso(estantillos, hilos),
     aisladorPuntilla: calculateAisladorPuntilla(estantillos, hilos),
     cableAislador: calculateCableAislador(potreros),
-    switches: Math.ceil(hilos / 2),
+    switches: Math.ceil(potreros / 2),
     largoBarraCopperweld: calculateLargoBarraCopperweld(data.tipoDeSuelo),
     cantidadBarras: calculateCantidadBarras(energizador),
     numeroKitFalsos: potreros * 1.2,
