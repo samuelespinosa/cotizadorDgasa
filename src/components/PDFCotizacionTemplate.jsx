@@ -35,7 +35,7 @@ const PDFCotizacionTemplate = React.forwardRef(({ productMap, total, tipoCerca }
             return (
               <tr key={prod.key}>
                 <td>{prod.label + " " +prod.type}</td>
-                <td>{Math.round(prod.qty*100)/100}</td>
+                <td>{Math.ceil(prod.qty)}</td>
                 <td>{prod.unit}</td>
                 <td>${unitPrice.toFixed(2)}</td>
                 <td>${totalPrice.toFixed(2)}</td>
@@ -48,7 +48,7 @@ const PDFCotizacionTemplate = React.forwardRef(({ productMap, total, tipoCerca }
           </tr>
         </tbody>
       </table>
-      <div className="pdf-cotizacion-footer" style={{ marginTop: "20px", textAlign: "left" }}>
+      <div className="pdf-cotizacion-footer" style={{ marginTop: "20px", textAlign: "left", padding: "10px" }}>
         <ul style={{ listStyleType: "none", paddingLeft: 0, fontSize: "9px" }}>
           <li style={{fontSize:"7px",marginBottom:"1px"}}>COTIZACIÓN SUJETA A DISPONIBILIDAD</li>
           <li style={{fontSize:"7px",marginBottom:"1px"}}>PRECIOS NO INCLUYEN IVA.</li>

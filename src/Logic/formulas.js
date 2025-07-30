@@ -5,7 +5,7 @@ export const calculateQuantities = (data) => {
   const energizador = determineEnergizer(area, data.tipoFuente);
   const estantillos = calculateEstantillos(area, data.tipoDeTerreno, potreros);
   const candtidadTensores = calculateCantidadTensores(hilos, potreros);
-  const alambrePorPotrero = calculateAlambrePorPotrero(hilos, data.calibreAlambre);
+  const alambrePorPotrero = calculateAlambrePorPotrero(potreros, data.calibreAlambre);
   const alambreSegunHectarea = calculateAlambreSegunHectarea(area, data.calibreAlambre);
   const totalAlambre = (alambreSegunHectarea + alambrePorPotrero) * hilos;
   return {
@@ -183,11 +183,11 @@ const calculateCantidadBarras = (energizador) => {
   }
 };
 
-const calculateAlambrePorPotrero = (hilos, calibreAlambre) => {
+const calculateAlambrePorPotrero = (potreros, calibreAlambre) => {
   if (["12", "14"].includes(calibreAlambre)) {
-    return Math.floor(hilos / 3);
+    return Math.floor(potreros / 3);
   } else if (calibreAlambre === "13") {
-    return Math.floor(hilos / 4);
+    return Math.floor(potreros / 4);
   }
   return 0;
 };
